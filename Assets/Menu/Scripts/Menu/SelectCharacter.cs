@@ -7,7 +7,6 @@ public class SelectCharacter : MonoBehaviour
     public GameObject[] personajes; 
     public GameObject[] previews;     
     public Transform puntoSpawn;         
-    public string escenaDelJuego = "Nivel1";
 
     private int indexActual = 0;
     private GameObject personajeActual;
@@ -57,9 +56,9 @@ public class SelectCharacter : MonoBehaviour
         MostrarPersonaje();
     }
 
-    public void Jugar()
+    public void Jugar(string escena)
     {
         GameManager.Instance.personajeSeleccionado = personajes[indexActual];
-        SceneManager.LoadScene(escenaDelJuego);
+        SceneManager.LoadScene(escena);
     }
 }
