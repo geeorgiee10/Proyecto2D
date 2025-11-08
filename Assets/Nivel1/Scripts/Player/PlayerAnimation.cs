@@ -43,7 +43,7 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //animator.SetFloat("y", rb.linearVelocity.y);
-        //animator.SetBool("enSuelo", playerMove.EnSuelo());
+        animator.SetFloat("y", rb.linearVelocity.y);
+        animator.SetBool("enSuelo", playerMove.EnSuelo());
     }
 }

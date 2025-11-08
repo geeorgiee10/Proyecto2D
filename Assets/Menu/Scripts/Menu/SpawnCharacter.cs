@@ -12,9 +12,6 @@ public class SpawnCharacter : MonoBehaviour
         {
             Instantiate(GameManager.Instance.personajeSeleccionado, puntoSpawn.position, puntoSpawn.rotation);
         }
-        else{
-            Debug.LogError("No se ha seleccionado ningun personaje");
-        }
     }
 
     

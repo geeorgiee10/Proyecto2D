@@ -32,10 +32,7 @@ public class SelectCharacter : MonoBehaviour
             personajeActual.transform.position = puntoSpawn.position;
             personajeActual.transform.rotation = puntoSpawn.rotation;
 
-            if (personajeActual == null)
-                Debug.LogError("NO SE INSTANCIÓ EL PERSONAJE");
-            else
-                Debug.Log("Instanciado en: " + personajeActual.transform.position);
+            
     }
 
     public void Siguiente()

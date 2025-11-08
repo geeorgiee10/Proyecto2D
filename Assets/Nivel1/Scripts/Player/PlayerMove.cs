@@ -19,7 +19,20 @@ public class PlayerMove : MonoBehaviour
 
     public bool enSuelo = true;
 
-    [Header("Salto")][SerializeField] private float fuerzaSalto = 7f;
+    
+
+    [Header("Doble Salto")]
+        [Header("Salto")][SerializeField] private float fuerzaSalto = 7f;
+        [SerializeField] private int saltosMaximos = 2;
+        private int numeroSaltos = 0;
+
+    [Header("Salto Pared")]
+        [SerializeField] private float fuerzaSaltoParedX = 6f;
+        [SerializeField] private float fuerzaSaltoParedY = 7f;
+        private bool enPared = false;
+        private bool saltoParedRealizado = false;
+
+
 
     [SerializeField] private Animator animator;
 
@@ -48,14 +61,38 @@ public class PlayerMove : MonoBehaviour
 
     public void OnJump(InputValue valor)
     {
-        if (!enSuelo)
+        
+        if(enPared && !enSuelo && !saltoParedRealizado)
+        {
+            rb.linearVelocity  = new Vector2(-Mathf.Sign(transform.localScale.x) * fuerzaSaltoParedX, fuerzaSaltoParedY);
+            saltoParedRealizado = true;
+            numeroSaltos = 1;
             return;
-        //if(!sonidoSalto.isPlaying)    
-         //   sonidoSalto.Play();
-        var v = rb.linearVelocity;
+        }
+        else if (enSuelo)
+        {
+            Saltar();
+            numeroSaltos = 1;
+            animator.SetTrigger("Salto");
+        }
+        else if(numeroSaltos < saltosMaximos)
+        {
+            Saltar();
+            numeroSaltos++;
+            animator.ResetTrigger("Salto");
+            animator.SetTrigger("DobleSalto");
+        }
+         
+    }
+
+    private void Saltar()
+    {
+        Vector2 v =rb.linearVelocity ;
         v.y = 0f;
-        rb.linearVelocity = v;
+        rb.linearVelocity  = v;
         rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+        if (!saltoParedRealizado && animator != null)
+            animator.SetTrigger(numeroSaltos == 0 ? "Salto" : "DobleSalto");
     }
 
 
@@ -71,16 +108,18 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var v = rb.linearVelocity;
-        v.x = entradaMovimiento.x * velocidadMovimiento;
-        rb.linearVelocity = v;
+        rb.linearVelocity = new Vector2(entradaMovimiento.x * velocidadMovimiento, rb.linearVelocity .y);
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        if (enSuelo)
+            numeroSaltos = 0;
+
         bool estaAndando = Mathf.Abs(entradaMovimiento.x) > 0.1 && enSuelo;
+
         /*if (estaAndando)
         {
             if (!sonidoAndar.isPlaying)
@@ -97,6 +136,7 @@ public class PlayerMove : MonoBehaviour
         }*/
     }
 
+
     private void Girar(bool aIzquierda)
     {
         mirandoDerecha = !mirandoDerecha;
@@ -110,6 +150,12 @@ public class PlayerMove : MonoBehaviour
         {
             enSuelo = true;
         }
+
+        if (other.gameObject.CompareTag("Pared"))
+        {
+            enPared = true;
+            animator.SetBool("enPared", true);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -117,6 +163,17 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.CompareTag("Suelo"))
         {
             enSuelo = false;
+            numeroSaltos = 0;
+            saltoParedRealizado = false;
+        }
+
+        if (other.gameObject.CompareTag("Pared"))
+        {
+            enPared = false;
+            saltoParedRealizado = false;
+            animator.SetBool("enPared", false);
         }
     }
+
+
 }
