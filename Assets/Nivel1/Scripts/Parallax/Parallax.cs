@@ -17,6 +17,9 @@ public class Parallax : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (camara == null)
+            return;
+
         Vector3 movimientoFondo = camara.position - ultimaPosicionCamara;
         transform.position += new Vector3(movimientoFondo.x * efectoParallax, movimientoFondo.y * efectoParallax, 0);
         ultimaPosicionCamara = camara.position;
