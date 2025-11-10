@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4892820924285877136}
   - component: {fileID: 4136602285295893744}
   - component: {fileID: 1755797902575478277}
+  - component: {fileID: 3922305284466690892}
+  - component: {fileID: 8488290572267794868}
   m_Layer: 0
   m_Name: MaskDude
   m_TagString: Untagged
@@ -251,3 +253,29 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1638062, y: 1.746809}
   m_EdgeRadius: 0
+--- !u!114 &3922305284466690892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238425887626937123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc93b4d3ca6d0f1408785710c2bc176b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7373136053277648007}
+--- !u!114 &8488290572267794868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238425887626937123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3eef2cc286e984ba75336787353bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoEspera: 0

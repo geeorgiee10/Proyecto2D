@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 7665023856500253933}
   - component: {fileID: 3910856698715839997}
   - component: {fileID: 3430071783664775386}
+  - component: {fileID: 2877686748052924371}
+  - component: {fileID: 179530900486176580}
   m_Layer: 0
   m_Name: NinjaFrog
   m_TagString: Untagged
@@ -251,3 +253,29 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2446446, y: 1.4900045}
   m_EdgeRadius: 0
+--- !u!114 &2877686748052924371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972706112898357590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc93b4d3ca6d0f1408785710c2bc176b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8994381713260881018}
+--- !u!114 &179530900486176580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972706112898357590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3eef2cc286e984ba75336787353bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoEspera: 0

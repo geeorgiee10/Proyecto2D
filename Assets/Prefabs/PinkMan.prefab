@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6084548175780406144}
   - component: {fileID: 98921206270437472}
   - component: {fileID: 6587629165287270106}
+  - component: {fileID: 3571566352645175066}
   m_Layer: 0
   m_Name: PinkMan
   m_TagString: Untagged
@@ -251,3 +252,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2087715, y: 1.56126}
   m_EdgeRadius: 0
+--- !u!114 &3571566352645175066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878120143408857301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3eef2cc286e984ba75336787353bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoEspera: 0
