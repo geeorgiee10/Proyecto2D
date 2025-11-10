@@ -28,7 +28,7 @@ public class GoNivel2 : MonoBehaviour
 
     private IEnumerator Desaparecer()
     {
-        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 
         animator.SetTrigger("Meta");
 
@@ -36,7 +36,9 @@ public class GoNivel2 : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
 
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.constraints = RigidbodyConstraints2D.None;
+
+        SpawnCheckpoint.Instance.QuitarCheckpoint();
 
         SceneManager.LoadScene("Nivel2");
         

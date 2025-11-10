@@ -7,9 +7,18 @@ public class SpawnJugador : MonoBehaviour
 
     public Transform puntoSpawn;
 
+
+    public Transform puntoSpawnActual;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (SpawnCheckpoint.Instance.checkpointPillado == true)
+            puntoSpawn.position = new Vector3(-10.23f, 3.98f, 0f);
+        
+        
+
+
         if (Camera.main != null)
         {
             Camera.main.transform.SetParent(puntoSpawn.transform);
@@ -28,8 +37,6 @@ public class SpawnJugador : MonoBehaviour
         puntoSpawn.gameObject.SetActive(true);
 
         yield return new WaitForSecondsRealtime(0.5f);
-
-        
 
         GameObject pj = Instantiate(
             GameManager.Instance.personajeSeleccionado,
