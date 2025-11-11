@@ -13,6 +13,7 @@ public class SpawnJugador : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         if (SpawnCheckpoint.Instance.checkpointPillado == true)
             puntoSpawn.position = new Vector3(-10.23f, 3.98f, 0f);
         

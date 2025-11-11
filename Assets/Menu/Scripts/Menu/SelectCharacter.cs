@@ -5,8 +5,10 @@ public class SelectCharacter : MonoBehaviour
 {
 
     public GameObject[] personajes; 
-    public GameObject[] previews;     
-    public Transform puntoSpawn;         
+    public GameObject[] previews;
+    public Transform puntoSpawn;
+
+    public Transform imagenTransicion;     
 
     private int indexActual = 0;
     private GameObject personajeActual;
@@ -56,6 +58,6 @@ public class SelectCharacter : MonoBehaviour
     public void Jugar(string escena)
     {
         GameManager.Instance.personajeSeleccionado = personajes[indexActual];
-        SceneManager.LoadScene(escena);
+        TransicionController.Instance.CambiarEscena(escena);
     }
 }

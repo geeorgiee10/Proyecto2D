@@ -40,6 +40,11 @@ public class PauseMenu : MonoBehaviour
         panelInstrucciones.SetActive(true);
     }
 
+    public void CerrarInstrucciones()
+    {
+        panelInstrucciones.SetActive(false);
+    }
+
     public void VolverMenu()
     {
         Time.timeScale = 1;

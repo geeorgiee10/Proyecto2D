@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float velocidadMovimiento = 6f;
 
-    private Vector2 entradaMovimiento;
+    public Vector2 entradaMovimiento;
 
     private Rigidbody2D rb;
 
