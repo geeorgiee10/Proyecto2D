@@ -14,8 +14,10 @@ public class SpawnJugador : MonoBehaviour
     void Start()
     {
 
-        if (SpawnCheckpoint.Instance.checkpointPillado == true)
+        if (SpawnCheckpoint.Instance != null && SpawnCheckpoint.Instance.checkpointPillado == true)
+        {
             puntoSpawn.position = new Vector3(-10.23f, 3.98f, 0f);
+        }
         
         
 
@@ -38,6 +40,12 @@ public class SpawnJugador : MonoBehaviour
         puntoSpawn.gameObject.SetActive(true);
 
         yield return new WaitForSecondsRealtime(0.5f);
+
+        if (GameManager.Instance == null || GameManager.Instance.personajeSeleccionado == null)
+        {
+            Debug.LogError("No se puede instanciar el jugador.");
+            yield break;
+        }
 
         GameObject pj = Instantiate(
             GameManager.Instance.personajeSeleccionado,

@@ -8,6 +8,7 @@ public class GoNivel2 : MonoBehaviour
     [SerializeField] private Animator animator;
 
     private Rigidbody2D rb;
+    private string escena = "Nivel2";
 
 
     void Start()
@@ -40,7 +41,7 @@ public class GoNivel2 : MonoBehaviour
 
         SpawnCheckpoint.Instance.QuitarCheckpoint();
 
-        SceneManager.LoadScene("Nivel2");
+        TransicionController.Instance.CambiarEscena(escena);
         
     }
 }
