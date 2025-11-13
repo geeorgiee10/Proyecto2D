@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: 6
+  entradaMovimiento: {x: 0, y: 0}
   mirandoDerecha: 1
   enSuelo: 1
   fuerzaSalto: 7

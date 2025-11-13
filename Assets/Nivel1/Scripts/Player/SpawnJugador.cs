@@ -27,7 +27,7 @@ public class SpawnJugador : MonoBehaviour
             Camera.main.transform.SetParent(puntoSpawn.transform);
 
             Camera.main.transform.localPosition = new Vector3(0, 2, -4);
-            Camera.main.transform.localRotation = Quaternion.Euler(10, 0, 0);
+            Camera.main.transform.localRotation = Quaternion.Euler(15, 0, 0);
         }
 
         StartCoroutine(Aparecer());

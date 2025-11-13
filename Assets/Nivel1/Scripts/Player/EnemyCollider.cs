@@ -10,6 +10,8 @@ public class EnemyCollider : MonoBehaviour
     private PlayerAnimation playerAnimation;
     //private VidasJugador vidasJugador;
 
+    private VidasJugador vidasJugador;
+
     private bool inmune;
 
     /*[Header("Sonidos")]
@@ -21,7 +23,7 @@ public class EnemyCollider : MonoBehaviour
     {
         playerMove = GetComponent<PlayerMove>();
         playerAnimation = GetComponent<PlayerAnimation>();
-        //vidasJugador = GetComponent<VidasJugador>();
+        vidasJugador = GetComponent<VidasJugador>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -31,6 +33,12 @@ public class EnemyCollider : MonoBehaviour
             if(!inmune)
                 StartCoroutine(PararYReiniciar());
         }
+
+        if (other.collider.CompareTag("ObstaculosNivel2"))
+        {
+            if(!inmune)
+                StartCoroutine(PararYReiniciarNivel2());
+        }
     }
 
 
@@ -38,21 +46,36 @@ public class EnemyCollider : MonoBehaviour
     {
         // Time.timeScale = 0;
         inmune = true;
-        //Datos2.Instance.vidas--;
         //vidasJugador.LoseLife();
 
         //sonidoMuerte.Play();
         playerAnimation.AnimacionMuerte();
         yield return new WaitForSecondsRealtime(tiempoEspera);
         inmune = false;
-        //playerAnimation.AnimacionVida();
-        /*if(Datos2.Instance.vidas <= 0)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
+    }
+
+    private IEnumerator PararYReiniciarNivel2()
+    {
+        inmune = true;
+        Datos.Instance.vidas--;
+        vidasJugador.LoseLife();
+
+        //sonidoMuerte.Play();
+        playerAnimation.AnimacionMuerte();
+        yield return new WaitForSecondsRealtime(tiempoEspera);
+        inmune = false;
+        if(Datos.Instance.vidas < 0)
         {
-            playerMove.Parar();
-            Datos2.Instance.vidas = 3;
-            Datos2.Instance.puntos = 0;*/
+            PanelPerder.Instance.PerderVidas();
+            yield break;
+        }
+        else
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //}
+        }
+        
         
     }
 }

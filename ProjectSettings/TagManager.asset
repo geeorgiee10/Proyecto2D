@@ -8,6 +8,8 @@ TagManager:
   - Pared
   - Meta
   - Enemy
+  - ObstaculosNivel2
+  - Manzana
   layers:
   - Default
   - TransparentFX

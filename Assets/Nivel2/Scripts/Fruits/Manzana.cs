@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BananaDes : MonoBehaviour
+public class Manzana : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
@@ -21,6 +21,10 @@ public class BananaDes : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Datos.Instance.vidas++;
+
+            VidasJugador.Instance.GetLife();
+
             transform.GetChild(0).gameObject.SetActive(false);
 
             transform.GetChild(1).gameObject.SetActive(true);
@@ -40,5 +44,7 @@ public class BananaDes : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         gameObject.SetActive(false);
+
+        
     }
 }
