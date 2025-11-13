@@ -66,7 +66,7 @@ public class EnemyCollider : MonoBehaviour
         playerAnimation.AnimacionMuerte();
         yield return new WaitForSecondsRealtime(tiempoEspera);
         inmune = false;
-        if(Datos.Instance.vidas < 0)
+        if(Datos.Instance.vidas <= 0)
         {
             PanelPerder.Instance.PerderVidas();
             yield break;

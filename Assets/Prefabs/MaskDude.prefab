@@ -297,4 +297,5 @@ MonoBehaviour:
   - {fileID: 4337625272240612617, guid: e507187fcd8a4a943b4e5481a2a69750, type: 3}
   - {fileID: 7556406083182719896, guid: 52757073de96e5d4a81f24119792dce3, type: 3}
   - {fileID: 6387607148502800712, guid: a785ebe4bdacdd74f9140b616241e190, type: 3}
-  maxLives: 3
+  - {fileID: 6387607148502800712, guid: 9027af1c49d0ff8458dd46d15dda5944, type: 3}
+  maxLives: 4

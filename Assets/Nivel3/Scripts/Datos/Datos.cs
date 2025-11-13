@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Datos : MonoBehaviour
 {
 
-    public int vidas = 3;
+    public int vidas = 4;
 
     public static Datos Instance;
     

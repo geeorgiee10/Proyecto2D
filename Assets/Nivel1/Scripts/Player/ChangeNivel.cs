@@ -52,7 +52,7 @@ public class ChangeNivel : MonoBehaviour
         {
 
             case "Nivel1":
-                escenaSiguiente = "Nivel2";
+                escenaSiguiente = "Nivel3";
                 break;
 
             case "Nivel2":

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3430071783664775386}
   - component: {fileID: 2877686748052924371}
   - component: {fileID: 179530900486176580}
+  - component: {fileID: 5370327691733253318}
   m_Layer: 0
   m_Name: NinjaFrog
   m_TagString: Player
@@ -280,3 +281,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoEspera: 1
+--- !u!114 &5370327691733253318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972706112898357590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565b3c7915f7a6442a949baaa5183045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts:
+  - {fileID: 4337625272240612617, guid: e507187fcd8a4a943b4e5481a2a69750, type: 3}
+  - {fileID: 7556406083182719896, guid: 52757073de96e5d4a81f24119792dce3, type: 3}
+  - {fileID: 6387607148502800712, guid: a785ebe4bdacdd74f9140b616241e190, type: 3}
+  - {fileID: 6387607148502800712, guid: 9027af1c49d0ff8458dd46d15dda5944, type: 3}
+  maxLives: 4

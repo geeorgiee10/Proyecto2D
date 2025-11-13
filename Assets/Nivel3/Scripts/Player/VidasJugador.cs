@@ -11,7 +11,7 @@ public class VidasJugador : MonoBehaviour
         [SerializeField] private List<Image> hearts = new();
 
     [Header("Config")]
-    [SerializeField] private int maxLives = 3;
+    [SerializeField] private int maxLives = 4;
 
     private int currentLives;
 
@@ -29,7 +29,7 @@ public class VidasJugador : MonoBehaviour
         }
 
         maxLives = Mathf.Clamp(maxLives, 0, hearts.Count);
-        SetLives(Datos.Instance.vidas);
+        //SetLives(Datos.Instance.vidas);
     }
 
     public void Start()
