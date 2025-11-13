@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class Coleccionabe : MonoBehaviour
 {
@@ -37,7 +39,7 @@ public class Coleccionabe : MonoBehaviour
     void Start()
     {
         etiquetaColeccionables.text = "0";
-        etiquetaMeta.text = "";
+        etiquetaMeta.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -55,8 +57,9 @@ public class Coleccionabe : MonoBehaviour
 
         if(coleccionables >= 6)
         {
-            etiquetaMeta.text = "LA META HA APARECIDO";
             MostrarMeta();
+            etiquetaMeta.gameObject.SetActive(true);
+            StartCoroutine(MostrarMensajeMeta("¡LA META HA APARECIDO!", 3f));
         }
 
     }
@@ -75,5 +78,12 @@ public class Coleccionabe : MonoBehaviour
             Instantiate(Meta, puntoSeleccionado.position, Quaternion.identity);
             Meta.gameObject.SetActive(true);
         }
+    }
+
+    private IEnumerator MostrarMensajeMeta(string mensaje, float duracion)
+    {
+        etiquetaMeta.text = mensaje;
+        yield return new WaitForSeconds(duracion);
+        etiquetaMeta.gameObject.SetActive(false);
     }
 }

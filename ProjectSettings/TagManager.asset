@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - ObstaculosNivel2
   - Manzana
+  - Temporizador
+  - Ventilador
   layers:
   - Default
   - TransparentFX

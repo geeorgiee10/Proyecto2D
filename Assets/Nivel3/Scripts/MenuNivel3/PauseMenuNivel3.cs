@@ -44,6 +44,7 @@ public class PauseMenuNivel3 : MonoBehaviour
         canvas.transform.GetChild(6).gameObject.SetActive(false);
         canvas.transform.GetChild(7).gameObject.SetActive(false);
         canvas.transform.GetChild(9).gameObject.SetActive(false);
+        canvas.transform.GetChild(10).gameObject.SetActive(false);
         panelInstrucciones.SetActive(true);
     }
 
@@ -55,6 +56,7 @@ public class PauseMenuNivel3 : MonoBehaviour
         canvas.transform.GetChild(6).gameObject.SetActive(true);
         canvas.transform.GetChild(7).gameObject.SetActive(true);
         canvas.transform.GetChild(9).gameObject.SetActive(true);
+        canvas.transform.GetChild(10).gameObject.SetActive(true);
         panelInstrucciones.SetActive(false);
     }
 

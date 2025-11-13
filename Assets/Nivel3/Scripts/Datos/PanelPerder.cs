@@ -39,15 +39,13 @@ public class PanelPerder : MonoBehaviour
     public void PerderVidas()
     {
         Time.timeScale = 0;
-        panelPerder.SetActive (true);
-        
-        
+        panelPerder.SetActive (true); 
     }
 
     public void RestartLevel()
     {
         Time.timeScale = 1;
-        Datos.Instance.vidas = 3;
+        Datos.Instance.vidas = 4;
         VidasJugador.Instance.SetLives(Datos.Instance.vidas);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
