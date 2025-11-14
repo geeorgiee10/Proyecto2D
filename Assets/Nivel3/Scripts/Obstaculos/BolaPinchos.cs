@@ -21,6 +21,11 @@ public class BolaPinchos : MonoBehaviour
         {
             Explotar();
         }
+
+        if (collision.collider.CompareTag("ObstaculosNivel2"))
+        {
+            Explotar();
+        }
     }
 
     void Explotar()

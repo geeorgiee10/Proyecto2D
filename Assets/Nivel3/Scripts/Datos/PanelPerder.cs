@@ -7,6 +7,8 @@ public class PanelPerder : MonoBehaviour
     public GameObject panelPerder;
 
     public static PanelPerder Instance;
+
+    public GameObject canvas;
     
 
     void Awake()
@@ -39,6 +41,13 @@ public class PanelPerder : MonoBehaviour
     public void PerderVidas()
     {
         Time.timeScale = 0;
+        canvas.transform.GetChild(3).gameObject.SetActive(false);
+        canvas.transform.GetChild(4).gameObject.SetActive(false);
+        canvas.transform.GetChild(5).gameObject.SetActive(false);
+        canvas.transform.GetChild(6).gameObject.SetActive(false);
+        canvas.transform.GetChild(7).gameObject.SetActive(false);
+        canvas.transform.GetChild(9).gameObject.SetActive(false);
+        canvas.transform.GetChild(10).gameObject.SetActive(false);
         panelPerder.SetActive (true); 
     }
 

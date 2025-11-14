@@ -10332,6 +10332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelPerder: {fileID: 33925583}
+  canvas: {fileID: 1174290390}
 --- !u!1001 &314173753
 PrefabInstance:
   m_ObjectHideFlags: 0
