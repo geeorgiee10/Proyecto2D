@@ -12,6 +12,7 @@ TagManager:
   - Manzana
   - Temporizador
   - Ventilador
+  - Traps
   layers:
   - Default
   - TransparentFX

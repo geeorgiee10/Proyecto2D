@@ -2,15 +2,34 @@ using UnityEngine;
 
 public class BolaPinchos : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject explosionEffect;   
+    public float destroyDelay = 0.2f;
+
+    private void  OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.collider.CompareTag("Player"))
+        {
+            Explotar();
+        }
+
+        if (collision.collider.CompareTag("Suelo"))
+        {
+            Explotar();
+        }
+
+        if (collision.collider.CompareTag("Traps"))
+        {
+            Explotar();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Explotar()
     {
-        
+        if (explosionEffect != null)
+        {
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject, destroyDelay);
     }
 }
