@@ -120,7 +120,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2648199388367870104}
   - component: {fileID: 355176292327704768}
-  - component: {fileID: 1514815299533839639}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Manzana
@@ -191,19 +190,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.78097904, y: 0.9002812}
   m_EdgeRadius: 0
---- !u!114 &1514815299533839639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611943373993410275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d84756a94c586340819224f95f7f9a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4785428940648670270}
 --- !u!1 &7417103253177127620
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,12 +25,20 @@ public class VidasJugador : MonoBehaviour
         }
         else
         {
+            Datos.Instance.vidas = 4;
             Instance = this; 
         }
 
         maxLives = Mathf.Clamp(maxLives, 0, hearts.Count);
         
+        if (Datos.Instance != null)
+        {
             SetLives(Datos.Instance.vidas);
+        }
+        else
+        {
+            
+        }
         
     }
 
