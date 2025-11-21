@@ -3,7 +3,6 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
     [Header("Movimiento")]
-    [SerializeField] private float distancia = 3f; 
     [SerializeField] private float velocidad = 2f; 
 
     [SerializeField] string etiquetaJugador = "Player";
