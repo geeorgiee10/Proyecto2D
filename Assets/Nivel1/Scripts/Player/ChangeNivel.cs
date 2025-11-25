@@ -11,6 +11,9 @@ public class ChangeNivel : MonoBehaviour
 
     private string escenaSiguiente;
 
+    [Header("Sonidos")]
+        [SerializeField] private AudioSource sonidoMeta;
+
 
     void Start()
     {
@@ -21,7 +24,8 @@ public class ChangeNivel : MonoBehaviour
     {
         if (other.collider.CompareTag("Meta"))
         {
-
+            if(!sonidoMeta.isPlaying)    
+                sonidoMeta.Play();
             StartCoroutine(Desaparecer());
 
         }
