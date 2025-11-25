@@ -19,6 +19,10 @@ public class PlayerMove : MonoBehaviour
 
     public bool enSuelo = true;
 
+    [Header("Sonidos")]
+        [SerializeField] private AudioSource sonidoCaminar;
+        [SerializeField] private AudioSource sonidoSaltar;
+        [SerializeField] private AudioSource sonidoSaltoPared;
     
 
     [Header("Doble Salto")]
@@ -36,9 +40,6 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
-    //[Header("Sonidos")]
-    //[SerializeField] private AudioSource sonidoSalto;
-    //[SerializeField] private AudioSource sonidoAndar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -65,6 +66,8 @@ public class PlayerMove : MonoBehaviour
         if(enPared && !enSuelo && !saltoParedRealizado)
         {
             rb.linearVelocity  = new Vector2(-Mathf.Sign(transform.localScale.x) * fuerzaSaltoParedX, fuerzaSaltoParedY);
+            if(!sonidoSaltoPared.isPlaying)    
+                sonidoSaltoPared.Play();
             saltoParedRealizado = true;
             numeroSaltos = 1;
             return;
@@ -72,12 +75,16 @@ public class PlayerMove : MonoBehaviour
         else if (enSuelo)
         {
             Saltar();
+            if(!sonidoSaltar.isPlaying)    
+                sonidoSaltar.Play();
             numeroSaltos = 1;
             animator.SetTrigger("Salto");
         }
         else if(numeroSaltos < saltosMaximos)
         {
             Saltar();
+            if(!sonidoSaltar.isPlaying)    
+                sonidoSaltar.Play();
             numeroSaltos++;
             animator.ResetTrigger("Salto");
             animator.SetTrigger("DobleSalto");
@@ -120,20 +127,20 @@ public class PlayerMove : MonoBehaviour
 
         bool estaAndando = Mathf.Abs(entradaMovimiento.x) > 0.1 && enSuelo;
 
-        /*if (estaAndando)
+        if (estaAndando)
         {
-            if (!sonidoAndar.isPlaying)
+            if (!sonidoCaminar.isPlaying)
             {
-                sonidoAndar.Play();
+                sonidoCaminar.Play();
             }
         }
         else
         {
-            if (sonidoAndar.isPlaying)
+            if (sonidoCaminar.isPlaying)
             {
-                sonidoAndar.Stop();
+                sonidoCaminar.Stop();
             }
-        }*/
+        }
     }
 
 

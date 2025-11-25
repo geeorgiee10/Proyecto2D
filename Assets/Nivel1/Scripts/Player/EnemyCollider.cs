@@ -14,8 +14,8 @@ public class EnemyCollider : MonoBehaviour
 
     private bool inmune;
 
-    /*[Header("Sonidos")]
-    [SerializeField] private AudioSource sonidoMuerte;*/
+    [Header("Sonidos")]
+        [SerializeField] private AudioSource sonidoMuerte;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -48,7 +48,7 @@ public class EnemyCollider : MonoBehaviour
         inmune = true;
         //vidasJugador.LoseLife();
 
-        //sonidoMuerte.Play();
+        sonidoMuerte.Play();
         playerAnimation.AnimacionMuerte();
         yield return new WaitForSecondsRealtime(tiempoEspera);
         inmune = false;
@@ -62,7 +62,7 @@ public class EnemyCollider : MonoBehaviour
         Datos.Instance.vidas--;
         vidasJugador.LoseLife();
 
-        //sonidoMuerte.Play();
+        sonidoMuerte.Play();
         playerAnimation.AnimacionMuerte();
         yield return new WaitForSecondsRealtime(tiempoEspera);
         inmune = false;

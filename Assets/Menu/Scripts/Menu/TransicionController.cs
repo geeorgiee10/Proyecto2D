@@ -12,6 +12,8 @@ public class TransicionController : MonoBehaviour
 
     [SerializeField] private Transform canvas;
 
+    [SerializeField] private AudioSource sonidoTransition;
+
     private void Awake()
     {
         if (Instance == null)
@@ -38,6 +40,9 @@ public class TransicionController : MonoBehaviour
 
     private IEnumerator AgrandarYCambiar(string nombreEscena)
     {
+        if(!sonidoTransition.isPlaying)    
+            sonidoTransition.Play();
+
         canvas.gameObject.SetActive(false);
         imagenTransicion.gameObject.SetActive(true);
         yield return StartCoroutine(Agrandar());

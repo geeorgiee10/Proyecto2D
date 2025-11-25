@@ -13,6 +13,9 @@ public class SelectCharacter : MonoBehaviour
     private int indexActual = 0;
     private GameObject personajeActual;
 
+    [SerializeField] private AudioSource sonidoChangePJ;
+    [SerializeField] private AudioSource sonidoSelectLevel;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +46,9 @@ public class SelectCharacter : MonoBehaviour
         if(indexActual >= previews.Length)
             indexActual = 0;
 
+        if(!sonidoChangePJ.isPlaying)    
+            sonidoChangePJ.Play();
+
         MostrarPersonaje();
     }
 
@@ -52,12 +58,19 @@ public class SelectCharacter : MonoBehaviour
         if(indexActual < 0)
             indexActual = previews.Length - 1;
 
+        if(!sonidoChangePJ.isPlaying)    
+            sonidoChangePJ.Play();
+
         MostrarPersonaje();
     }
 
     public void Jugar(string escena)
     {
         GameManager.Instance.personajeSeleccionado = personajes[indexActual];
+
+        if(!sonidoSelectLevel.isPlaying)    
+            sonidoSelectLevel.Play();
+
         TransicionController.Instance.CambiarEscena(escena);
     }
 }
