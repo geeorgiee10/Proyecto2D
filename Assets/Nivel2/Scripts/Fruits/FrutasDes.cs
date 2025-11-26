@@ -4,6 +4,9 @@ public class FrutasDes : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
+    [Header("Sonidos")]
+        [SerializeField] private AudioSource sonidoRecoger;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +24,9 @@ public class FrutasDes : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if(!sonidoRecoger.isPlaying)    
+                sonidoRecoger.Play();
+
             GetComponent<Collider2D>().enabled = false;
 
             transform.GetChild(0).gameObject.SetActive(false);

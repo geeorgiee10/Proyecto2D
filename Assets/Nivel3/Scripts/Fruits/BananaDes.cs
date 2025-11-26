@@ -4,6 +4,9 @@ public class BananaDes : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
+    [Header("Sonidos")]
+        [SerializeField] private AudioSource sonidoRecoger;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +24,9 @@ public class BananaDes : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if(!sonidoRecoger.isPlaying)    
+                sonidoRecoger.Play();
+
             transform.GetChild(0).gameObject.SetActive(false);
 
             transform.GetChild(1).gameObject.SetActive(true);

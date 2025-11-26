@@ -13,9 +13,13 @@ public class Platform : MonoBehaviour
     [SerializeField] private Transform puntoA;
     [SerializeField] private Transform puntoB;
 
+    [Header("Sonidos")]
+        [SerializeField] private AudioSource sonidoPlataforma;
+
 
     private bool yendoADerecha = true;
     private bool volver = false;
+    private bool encima = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +30,7 @@ public class Platform : MonoBehaviour
 
     void Update()
     {
-        if(volver)
+        if(volver && !encima)
         {
             Volver();
         }
@@ -58,6 +62,9 @@ public class Platform : MonoBehaviour
     {
         if (collision.collider.CompareTag(etiquetaJugador))
         {
+            encima = true;
+            volver = false;
+
             collision.transform.parent = plataforma;
             animator.SetTrigger("Moverse");
         }
@@ -67,14 +74,19 @@ public class Platform : MonoBehaviour
     {
         if (collision.collider.CompareTag(etiquetaJugador))
         {
+            if(!sonidoPlataforma.isPlaying)    
+                sonidoPlataforma.Play();
             Moverse();
         }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
+        if(sonidoPlataforma.isPlaying)    
+            sonidoPlataforma.Stop();
         animator.SetTrigger("DejarMoverse");
         volver = true;
+        encima = false;
         if (collision.gameObject.tag.Equals(etiquetaJugador))
         {
             if(collision.transform != null && transform != null &&

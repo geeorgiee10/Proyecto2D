@@ -5,6 +5,9 @@ public class FruitTP : MonoBehaviour
 
     public Transform TPManzana;
 
+    [Header("Sonidos")]
+        [SerializeField] private AudioSource sonidoRecoger;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +24,9 @@ public class FruitTP : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            
+            if(!sonidoRecoger.isPlaying)    
+                sonidoRecoger.Play();
+
             other.transform.position = TPManzana.position;
 
         }
