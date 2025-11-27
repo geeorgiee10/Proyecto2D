@@ -60,7 +60,7 @@ public class EnemyCollider : MonoBehaviour
     {
         inmune = true;
         Datos.Instance.vidas--;
-        vidasJugador.LoseLife();
+        VidasJugador.Instance.LoseLife();
 
         sonidoMuerte.Play();
         playerAnimation.AnimacionMuerte();

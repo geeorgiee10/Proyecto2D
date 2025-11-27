@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 1755797902575478277}
   - component: {fileID: 3922305284466690892}
   - component: {fileID: 8488290572267794868}
-  - component: {fileID: 1242661797044229681}
   - component: {fileID: 3415536353304169763}
   - component: {fileID: 7908083992383766331}
   - component: {fileID: 9020003619649518491}
@@ -291,24 +290,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiempoEspera: 1
   sonidoMuerte: {fileID: 5423798954291186424}
---- !u!114 &1242661797044229681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2238425887626937123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 565b3c7915f7a6442a949baaa5183045, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hearts:
-  - {fileID: 4337625272240612617, guid: e507187fcd8a4a943b4e5481a2a69750, type: 3}
-  - {fileID: 7556406083182719896, guid: 52757073de96e5d4a81f24119792dce3, type: 3}
-  - {fileID: 6387607148502800712, guid: a785ebe4bdacdd74f9140b616241e190, type: 3}
-  - {fileID: 6387607148502800712, guid: 9027af1c49d0ff8458dd46d15dda5944, type: 3}
-  maxLives: 4
 --- !u!82 &3415536353304169763
 AudioSource:
   m_ObjectHideFlags: 0

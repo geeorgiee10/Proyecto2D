@@ -15,6 +15,8 @@ public class VidasJugador : MonoBehaviour
 
     private int currentLives;
 
+    private bool Reinicio;
+
 
     private void Awake()
     {
@@ -25,29 +27,20 @@ public class VidasJugador : MonoBehaviour
         }
         else
         {
-            Datos.Instance.vidas = 4;
+            
             Instance = this; 
         }
 
         maxLives = Mathf.Clamp(maxLives, 0, hearts.Count);
-        
-        if (Datos.Instance != null)
-        {
-            SetLives(Datos.Instance.vidas);
-        }
-        else
-        {
-            
-        }
+
+        SetLives(Datos.Instance.vidas);
         
     }
 
     public void Start()
     {
-        if (Datos.Instance != null)
-        {
-            SetLives(Datos.Instance.vidas);
-        }
+        //Datos.Instance.vidas = 4;
+        SetLives(Datos.Instance.vidas);
     }
 
     public void SetLives(int lives)
@@ -55,7 +48,7 @@ public class VidasJugador : MonoBehaviour
         currentLives = Mathf.Clamp(lives, 0, maxLives);
         for(int i = 0; i < hearts.Count; i++)
         {
-            if (i >= maxLives)
+            if (i > Datos.Instance.vidas)
             {
                 hearts[i].gameObject.SetActive(false);
             }
@@ -69,8 +62,8 @@ public class VidasJugador : MonoBehaviour
 
     public void LoseLife(int amount = 1)
     {
-        currentLives -= amount;
-        SetLives(currentLives);
+        //currentLives -= amount;
+        SetLives(Datos.Instance.vidas);
     }
     
 }
