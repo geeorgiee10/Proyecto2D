@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 8771702518043509366, guid: 0f893b1c3fe3bc44a95b60eb4a62217b, type: 3}
-  destroyDelay: 0.2
+  destroyDelay: 1
   sonidoBomba: {fileID: 3328059436984345131}
 --- !u!82 &3328059436984345131
 AudioSource:
@@ -226,16 +226,16 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 535cf33cb5bee904fad0909415313b3c, type: 3}
-  m_Resource: {fileID: 8300000, guid: 535cf33cb5bee904fad0909415313b3c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dda0a4313661a2f4f9918a57d9064638, type: 3}
+  m_Resource: {fileID: 8300000, guid: dda0a4313661a2f4f9918a57d9064638, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.545
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

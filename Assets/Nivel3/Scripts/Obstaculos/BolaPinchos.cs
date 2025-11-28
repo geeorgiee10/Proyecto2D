@@ -13,12 +13,12 @@ public class BolaPinchos : MonoBehaviour
 
     }
 
+
     private void  OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
             sonidoBomba.Play();
-            Debug.Log("Sonido");
             Explotar();
             
         }
@@ -41,11 +41,13 @@ public class BolaPinchos : MonoBehaviour
 
     void Explotar()
     {
+        
         if (explosionEffect != null)
         {
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
         }
 
-        Destroy(gameObject, destroyDelay);
+
+        Destroy(gameObject, sonidoBomba.clip.length );
     }
 }
