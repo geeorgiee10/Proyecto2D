@@ -45,8 +45,6 @@ public class MenuFinal : MonoBehaviour
     public void VolverMenu()
     {
         Time.timeScale = 1;
-        Datos.Instance.vidas = 4;
-        VidasJugador.Instance.SetLives(Datos.Instance.vidas);
 
         if(GameManager.Instance != null)
             Destroy(GameManager.Instance.gameObject);
